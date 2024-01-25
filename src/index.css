@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.inter_font{
+  font-family: 'Inter', sans-serif;
+}
+
+.red-var{
+  background: rgba(237, 84, 78, 0.12);
+}
+
+.green-var{
+  background: rgba(52, 202, 165, 0.12);
+}
+
+/* #0C0A09 outer dark*/
+/* #181818  inner dark */
