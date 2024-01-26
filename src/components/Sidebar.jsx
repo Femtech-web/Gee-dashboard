@@ -5,62 +5,49 @@ import React, { useState } from 'react';
 import { AiOutlinePoweroff, AiOutlineClose } from 'react-icons/ai';
 import styles from './styles';
 import { useCustomState } from '../hooks/responsive';
-import Logo from '../assets/Logo';
-import Dashboard from '../assets/Dashboard';
-import TrendUp from '../assets/TrendUp';
-import User from '../assets/User';
-import Box from '../assets/Box';
-import Discount from '../assets/Discount';
-import InfoBox from '../assets/Info';
+import Settings from '../assets/Settings';
 import Line from '../assets/Line';
 import Sun from '../assets/Sun';
 import Moon from '../assets/Moon';
-import { bottomLinks } from './dummy';
+import { bottomLinks, topLinks } from './dummy';
 
-const Sidebar = ({ isNavOpen, setIsNavOpen, setCurrentMode, currentMode, setMode }) => {
+const Sidebar = ({ 
+  isNavOpen, 
+  setIsNavOpen, 
+  setCurrentMode, 
+  currentMode, 
+  setMode, 
+  setCurrentBar, 
+  currentBar,
+  settingBar,
+  setSettingBar 
+}) => {
   const [ mobile ] = useCustomState({setIsNavOpen});
   const isDark = currentMode === "dark";
 
- const topLinks = [
-    {
-      id: 0,
-      src: <Logo />,
-      name: "lo"
-    },
-    {
-      id: 1,
-      src: currentMode === "dark" ? <Dashboard fill="#fff" outer_fill="#fff" /> : <Dashboard fill="#0D062D" outer_fill="#0D062D"/>,
-    },
-    {
-      id: 2,
-      src: <TrendUp />
-    },
-    {
-      id: 3,
-      src:<User />
-    },
-    {
-      id: 4,
-      src: <Box />
-    },
-    {
-      id: 5,
-      src: <Discount />
-    },
-    {
-      id: 6,
-      src: <InfoBox />
-    }
-  ];
+  const handleClick = (name) => {
+    setSettingBar("");
+    setCurrentBar(name);
+  }
+
+  const handleSetting = () => {
+    setCurrentBar(null);
+    setSettingBar("setting");
+  }
 
   return (
     <section className={styles.container}>
       <div className="flex flex-col justify-between items-center h-full w-full">
         <div className='flex flex-col gap-6 items-center mt-3 w-full'>
           {topLinks.map((link, index) => (
-            <div key={link.id} className='relative w-full flex justify-center cursor-pointer'>
-              {link.src}
-             {index === 1 
+            <div onClick={() => handleClick(link.name)} key={link.id} className='relative w-full flex justify-center cursor-pointer'>
+              {currentBar === link.name 
+              ? isDark 
+              ? React.cloneElement(link.src, { stroke: "white", fill:"#fff", outer_fill:"#fff" }) 
+              : React.cloneElement(link.src, { stroke: "black", fill:"black", outer_fill:"black" }) 
+              : React.cloneElement(link.src, { stroke: "#B2ABAB", fill:"#B2ABAB", outer_fill:"#B2ABAB" })
+              }
+             {currentBar === link.name && index !== 0
               && <span className='absolute right-0 top-0'>
                 {currentMode === "dark" 
                 ? <Line fill="#fff" />
@@ -77,6 +64,23 @@ const Sidebar = ({ isNavOpen, setIsNavOpen, setCurrentMode, currentMode, setMode
           </div>
         </div>
         <div className='flex flex-col gap-6 items-center mb-8 min-w-full'>
+          <div className='relative w-full flex justify-center cursor-pointer'>
+            {<span onClick={handleSetting}>
+             {settingBar === "setting"  
+              ? isDark 
+              ? <Settings stroke="#fff"/>
+              : <Settings stroke="#000"/> 
+              : <Settings stroke="#B2ABAB"/>}
+              </span>
+            }
+            {settingBar === "setting" 
+              && <span className='absolute right-0 top-0'>
+                {isDark
+                ? <Line fill="#fff" />
+              : <Line fill="#0D062D" />}
+              </span>
+            }
+          </div>
           {bottomLinks.map((link, index) => (
              <div key={link.id} className='relative flex justify-center cursor-pointer w-full'>
                 <img 

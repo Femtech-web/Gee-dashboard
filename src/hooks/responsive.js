@@ -13,7 +13,7 @@ export const useCustomState = () => {
   }, []);
 
   useEffect(() => {
-    if(screenSize <= 640){
+    if(screenSize <= 912){
         setMobile(true);
       } else{
       setMobile(false);

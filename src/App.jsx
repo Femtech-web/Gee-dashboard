@@ -26,7 +26,8 @@ function App() {
     };
 
   const [currentMode, setCurrentMode] = useState(getMode());
-  const[ currentBar, setCurrentBar] = useState(0)
+  const[ currentBar, setCurrentBar] = useState("home");
+  const [ settingBar, setSettingBar ] = useState("");
 
   return (
     <div className={currentMode === "dark" && "dark"}>
@@ -36,12 +37,20 @@ function App() {
         setCurrentMode={setCurrentMode} 
         currentMode={currentMode}
         setMode={setMode} 
+        currentBar={currentBar}
+        setCurrentBar={setCurrentBar}
+        settingBar={settingBar} 
+        setSettingBar={setSettingBar}
       />
       {isNavOpen && <MobileSidebar 
-      setIsNavOpen={setIsNavOpen} 
-      currentMode={currentMode} 
-      setMode={setMode} 
-       />}
+        setIsNavOpen={setIsNavOpen} 
+        currentMode={currentMode} 
+        setMode={setMode}
+        currentBar={currentBar} 
+        setCurrentBar={setCurrentBar}
+        settingBar={settingBar} 
+        setSettingBar={setSettingBar}
+      />}
       <main className={styles.pageContainer}>
         <Navbar currentMode={currentMode} setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen}/>
         <div className={styles.bodyContainer}>

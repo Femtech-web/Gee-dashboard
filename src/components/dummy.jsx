@@ -1,23 +1,65 @@
 import dayjs from "dayjs";
 import { FiUser, FiCreditCard } from 'react-icons/fi';
 import { TbMoneybag } from 'react-icons/tb';
+import Logo from '../assets/Logo';
+import Dashboard from '../assets/Dashboard';
+import TrendUp from '../assets/TrendUp';
+import User from '../assets/User';
+import Box from '../assets/Box';
+import Discount from '../assets/Discount';
+import InfoBox from '../assets/Info';
 
 const presentDate =  dayjs().format('MMMM D, YYYY');
 
 export const bottomLinks = [
   {
-    id: 0,
-    src: "/setting.svg"
-  },
-  {
-    id: 0,
+    id: 1,
+    name: "arrow",
     src: "/arrow-right.svg"
   },
   {
-    id: 0,
+    id: 2,
     src: "/logout.svg"
   },
-]
+];
+
+export const topLinks = [
+  {
+    id: 0,
+    src: <Logo />,
+    name: "home",
+  },
+  {
+    id: 1,
+    name: "home",
+    src: <Dashboard />
+  },
+  {
+    id: 2,
+    name: "trend",
+    src: <TrendUp />
+  },
+  {
+    id: 3,
+    name: "user",
+    src:<User />
+  },
+  {
+    id: 4,
+    name: "box",
+    src: <Box />
+  },
+  {
+    id: 5,
+    name: "discount",
+    src: <Discount />
+  },
+  {
+    id: 6,
+    name: "info",
+    src: <InfoBox />
+  }
+];
 
 export const BarExpenseChart = [
   { month: 'Jan', sales: 14000 },

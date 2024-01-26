@@ -15,7 +15,7 @@ const Card = ({ icon, chart, header, amount, status, increaseBy, arrow}) => {
         <h3 className='text-[#898989] dark:text-gray-300 text-big font-medium leading-[1.625rem]'>{header}</h3>
         <p className='text-gray_400 dark:text-darkText text-[1.5rem] font-semibold'>{amount}</p>
       </div>
-      <div className='flex justify-between w-full inter_font items-center'>
+      <div className='flex gap-2 w-full inter_font items-center'>
         <div className={`flex justify-center items-center rounded-md p-1 gap-2 ${status === "increase" ? 'green-var' : 'red-var'}`}>
           <img src={status === "increase" ? "/arrow-chart.svg" : "/arrow-chart-down.svg"} alt="icon" />
           <span className={`${status === "increase" ? "text-[#34CAA5]" : "text-[#ED544E]"} text-[0.75rem] font-medium`}>{increaseBy}</span>
@@ -43,7 +43,7 @@ const Platform = ({header, amount, stat, color, percent }) => {
 
 const RightSection = () => {
   return (
-    <section className='md:w-[38%] w-full flex flex-col gap-6'>
+    <section className='lg:w-[38%] w-full flex flex-col gap-6'>
       <div className='grid h-[400px] md:grid-cols-2 grid-cols-1 gap-3'>
         {cardsData.map((card, index) => (
           <Card key={index} {...card} />

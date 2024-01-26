@@ -64,7 +64,7 @@ const LeftSection = ({ currentMode }) => {
 
 
   return (
-    <section className='md:w-[58%] w-full flex flex-col gap-6'>
+    <section className='lg:w-[58%] w-full flex flex-col gap-6'>
       <div className='flex flex-col w-full bg-white dark:bg-inner_dark dark:border-white/10 rounded-[0.875rem] p-[0.5rem] border-[1px] border-[#EDF2F7]'>
         <div className='flex md:flex-row flex-col md:justify-between justify-start w-full md:gap-0 gap-3'>
           <h2 className='text-big font-semibold text-gray_600 dark:text-darkText'>Sales Trends</h2>
@@ -94,17 +94,19 @@ const LeftSection = ({ currentMode }) => {
           <h2 className='text-big font-semibold text-gray_600 dark:text-darkText'>Last Orders</h2>
           <p className='text-big text-[#34CAA5] font-medium cursor-pointer hover:underline'>See All</p>
         </div>
-        <div className="flex flex-col my-8 overflow-x-auto min-w-[700px]">
-          <div className="mb-4 font-semibold text-[#9CA4AB] dark:text-gray-300 flex items-center w-full  pl-2">
-            <p className="w-[30%]"><span className="w-full flex justify-start">Name</span></p>
-            <p className="w-[25%]"><span className="w-full flex justify-start">Date</span></p>
-            <p className="w-[20%]"><span className="w-full flex justify-start">Amount</span></p>
-            <p className="w-[15%]"><span className="w-full flex justify-start">Status</span></p>
-            <p className="w-[10%%]"><span className="w-full flex justify-start">Invoice</span></p>
+        <div className="overflow-x-auto">
+          <div className="flex flex-col my-8 min-w-[700px]">
+            <div className="mb-4 font-semibold text-[#9CA4AB] dark:text-gray-300 flex items-center w-full">
+              <p className="w-[30%]"><span className="w-full flex justify-start">Name</span></p>
+              <p className="w-[25%]"><span className="w-full flex justify-start">Date</span></p>
+              <p className="w-[20%]"><span className="w-full flex justify-start">Amount</span></p>
+              <p className="w-[15%]"><span className="w-full flex justify-start">Status</span></p>
+              <p className="w-[10%%]"><span className="w-full flex justify-start">Invoice</span></p>
+            </div>
+            {OrdersData.map((data, index) => (
+              <Order currentMode={currentMode} key={index} {...data} />
+            ))}
           </div>
-          {OrdersData.map((data, index) => (
-            <Order currentMode={currentMode} key={index} {...data} />
-          ))}
         </div>
       </div>
     </section>
