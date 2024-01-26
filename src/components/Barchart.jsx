@@ -14,21 +14,6 @@ import { useCustomState } from '../hooks/responsive';
 import { BarExpenseChart } from './dummy';
 import styles from './styles';
 
-{/* <BarChart width={150} height={400} data={data}>
-  <Bar dataKey="uv" radius={8}>
-    <LabelList
-      dataKey="name"
-      position="insideBottom"
-      angle={270}
-      offset={25}
-      fill="black"
-    />
-    {colors.blueTheme.map((entry, index) => (
-      <Cell key={`cell-${index}`} fill={colors.blueTheme[index % 20]} />
-    ))}
-  </Bar>
-</BarChart> */}
-
 const BarChartComponent = () => {
   const [ mobile ] = useCustomState();
 
@@ -37,7 +22,7 @@ const BarChartComponent = () => {
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
           data={BarExpenseChart}
-          margin={{top:0, right: 0, left:mobile ? 0 : 6, bottom: 0}}
+          margin={{top:0, right: 0, left: 6, bottom: 0}}
           >
             <defs>
               <linearGradient id="colorMonth" x1="0" y1="0" x2="0" y2="1">
