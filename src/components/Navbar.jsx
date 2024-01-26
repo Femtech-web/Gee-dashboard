@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { AiOutlineMenu } from "react-icons/ai";
-import { BsSearch } from "react-icons/bs";
-import {  MdAdd } from "react-icons/md";
 import UserProfile from './UserProfile';
 import styles from './styles';
 import Calendar from '../assets/Calendar';

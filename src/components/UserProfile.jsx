@@ -3,21 +3,18 @@
 
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-
 import styles from './styles';
 import { userProfileData } from './dummy';
 
 const UserProfile = ({ setIsProfileOpen}) => {
 
-  const handleClick = (e, url) => {
+  const handleClick = () => {
     setIsProfileOpen(false);
-
   }
 
   return (
     <div className={styles.userProfileCont}>
       <div className={styles.between}>
-        {/* <p className={styles.textLg}>User Profile</p> */}
         <button className='rounded-md p-2 dark:text-darkText'
           onClick={() => setIsProfileOpen(false)}>
           <AiOutlineClose fontSize={20} />

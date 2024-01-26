@@ -4,7 +4,7 @@
 import React from 'react';
 import { cardsData, platformData } from './dummy';
 
-const Card = ({ icon, chart, header, amount, status, increaseBy, arrow}) => {
+const Card = ({ icon, chart, header, amount, status, increaseBy }) => {
   return (
     <div className='flex flex-col bg-white dark:bg-inner_dark dark:border-white/10 rounded-[0.875rem] p-[1rem] border-[1px] border-[#EDF2F7] gap-4'>
       <div className='flex justify-between items-center'>

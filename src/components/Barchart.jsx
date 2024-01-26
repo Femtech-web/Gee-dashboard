@@ -2,21 +2,17 @@
 
 import React from 'react'
 import { 
-BarChart, 
-ResponsiveContainer, 
-Legend,  
-XAxis, 
-YAxis, 
-CartesianGrid, 
-Tooltip, 
-Bar } from 'recharts';
-import { useCustomState } from '../hooks/responsive';
+  BarChart, 
+  ResponsiveContainer, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  Bar 
+} from 'recharts';
 import { BarExpenseChart } from './dummy';
-import styles from './styles';
 
 const BarChartComponent = () => {
-  const [ mobile ] = useCustomState();
-
   return (
     <div className="min-w-[700px] h-[320px] ">
       <ResponsiveContainer width='100%' height='100%'>
@@ -28,7 +24,6 @@ const BarChartComponent = () => {
               <linearGradient id="colorMonth" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="30%" stopColor="#34CAA5" stopOpacity={0.8}/>
                 <stop offset="70%" stopColor="rgba(52, 202, 165, 0.10)" stopOpacity={0.8}/>
-                {/* rgba(52, 202, 165, 0.10) */}
               </linearGradient>
             </defs>
           <CartesianGrid strokeDasharray="3 3" />
@@ -37,13 +32,10 @@ const BarChartComponent = () => {
           <Tooltip />
           <Bar 
             dataKey="sales" 
-            // fill="#82ca9d" 
-            // stackId="a"
             type='string' 
             radius={20} 
             fillOpacity={1} 
             fill="url(#colorMonth)"
-            // fill="rgba(52, 202, 165, 0.10)" 
           />
         </BarChart>
       </ResponsiveContainer>

@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
-import React, { useState } from 'react';
-import { AiOutlinePoweroff, AiOutlineClose } from 'react-icons/ai';
+import React from 'react';
 import styles from './styles';
 import { useCustomState } from '../hooks/responsive';
 import Settings from '../assets/Settings';
@@ -12,9 +11,7 @@ import Moon from '../assets/Moon';
 import { bottomLinks, topLinks } from './dummy';
 
 const Sidebar = ({ 
-  isNavOpen, 
   setIsNavOpen, 
-  setCurrentMode, 
   currentMode, 
   setMode, 
   setCurrentBar, 
@@ -22,7 +19,6 @@ const Sidebar = ({
   settingBar,
   setSettingBar 
 }) => {
-  const [ mobile ] = useCustomState({setIsNavOpen});
   const isDark = currentMode === "dark";
 
   const handleClick = (name) => {

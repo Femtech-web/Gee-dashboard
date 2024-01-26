@@ -1,15 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-import React, { useState } from 'react';
-import { AiOutlinePoweroff, AiOutlineClose } from 'react-icons/ai';
+import React from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 import styles from './styles';
 import Settings from '../assets/Settings';
 import Line from '../assets/Line';
 import Sun from '../assets/Sun';
 import Moon from '../assets/Moon';
 import { bottomLinks, topLinks } from './dummy';
-import Sidebar from './Sidebar';
 
 const MobileSidebar = ({ 
   currentMode, 
