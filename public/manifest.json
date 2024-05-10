@@ -1,0 +1,14 @@
+{
+  "name": "Geepay",
+  "short_name": "Geepay",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0F1724",
+  "background_color": "#ffffff",
+  "start_url": "https://gee-dashboard-eta.vercel.app/",
+  "display": "standalone"
+}
